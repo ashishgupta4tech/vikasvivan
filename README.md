@@ -1,30 +1,23 @@
-# vikasvivan.com
+# Folder 2 — GitHub Drop-In
 
-Personal portfolio of **Vikas Yadav** — B.Pharm (2022–26, Shri Rawatpura Sarkar University, Raipur) · M.Pharm Pharmaceutical Quality Assurance (2026–28, Sanjay Rungta Group of Institutions, Bhilai) · founder of Avzera Digital Solutions · author of the Hindi personal-finance blog Rupium.
+Production domain: `https://vikasyadav.is-a.dev/`
 
-**Live:** https://vikasvivan.com
+This folder is a ready-to-push repository. `index.html` sits at the repo root,
+so GitHub Pages works with "Deploy from a branch → / (root)" and no build step.
+The existing repository is `https://github.com/ashishgupta4tech/vikasvivan`.
 
-## What's in this repo
-| Path | What it is |
-|---|---|
-| `index.html` | Home page — hero, proof strip, work, showcase, Avzera editions, research, QA × AI drafting bench, credentials ledger, contact |
-| `resume.html` | One-page A4 resume (print + screen) |
-| `404.html` | Not-found page |
-| `coach/` | Personal Life Coach OS dashboard (task engine, habits, Avzera pipeline, lab tracker, mastery tracker) — all data in `localStorage` |
-| `css/style.css` | Design system: tokens, layout, motion, responsive rules |
-| `js/main.js` | Interactions: scroll reveal, filters, command palette (Ctrl+K), bench wiring, reveals |
-| `js/sop-bench.js` | QA × AI drafting bench logic |
-| `assets/` | Self-hosted fonts, images, resume PDF, OG card |
+## How to upload (drag & drop)
+1. Open the repository on GitHub and click **uploading an existing file**.
+2. Drag this whole folder's *contents* (not the folder itself) into the browser window.
+   Tip: open this folder in Explorer, select everything (Ctrl+A) and drag it in.
+3. Wait for the upload, then **Commit changes**.
 
-## Stack
-Zero build step, zero framework. Plain HTML + CSS + vanilla JS. Works on GitHub Pages, Cloudflare Pages, Netlify and Vercel as-is.
+## After the upload
+- **GitHub Pages**: Settings → Pages → Source: *Deploy from a branch* → branch `main`, folder `/(root)` → Save.
+  The project URL is `https://ashishgupta4tech.github.io/vikasvivan`.
+- **Vercel** (current live host): import this repository, set Framework Preset to *Other*,
+  leave Build Command empty, set Output Directory to `/`, then Deploy.
+- **Cloudflare Pages**: Pages → Create → *Connect to Git* → pick this repo →
+  Build command: *leave empty* · Output directory: `/` → Deploy.
 
-## Deploy
-- **GitHub Pages**: Settings → Pages → Deploy from a branch → `main` / `/(root)`
-- **Cloudflare Pages**: connect this repo, leave the build command empty, output directory `/`
-- **Netlify / Vercel**: upload the folder as a static site (framework: *Other*)
-
-## Contact
-- Email: vvu364992@gmail.com
-- LinkedIn: https://www.linkedin.com/in/vikas-yadav-hq/
-- Blog: https://www.rupium.in
+The `CNAME` file already contains `vikasyadav.is-a.dev` for GitHub Pages custom-domain use.

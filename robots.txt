@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vikasvivan.com/sitemap.xml
+Sitemap: https://vikasyadav.is-a.dev/sitemap.xml
