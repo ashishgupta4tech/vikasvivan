@@ -2,37 +2,65 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vikas Yadav — Life Coach OS</title>
-<meta name="description" content="Personal life-coach dashboard for Vikas Yadav: M.Pharm QA + Avzera freelance + QA lab / API business plan, 2026–2031.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Coach OS — Public Demo</title>
+<meta name="description" content="An interactive planning dashboard demo with synthetic data. Personal Coach OS data is not published.">
 <meta name="theme-color" content="#060a09">
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/dm-sans-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/instrument-serif-latin.woff2" crossorigin>
 <link rel="stylesheet" href="coach.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a09'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%232dd4a7' text-anchor='middle' font-style='italic'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060a09'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' fill='%232dd4a7' text-anchor='middle' font-style='italic'%3EC%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<div class="app">
-  <aside class="side">
+<a class="skip-link" id="skipLink" href="#viewRoot" hidden>Skip to dashboard</a>
+<main class="demo-gate" id="demoGate" aria-labelledby="demoGateTitle">
+  <div class="demo-gate-card">
+    <span class="demo-kicker">INTERACTIVE PRODUCT DEMO</span>
+    <h1 id="demoGateTitle">A calmer way to see<br><em>the whole plan.</em></h1>
+    <p>Explore tasks, habits, milestones and weekly reviews in a working dashboard. Everything here is synthetic demo data — no personal schedule, finances or business targets are published.</p>
+    <button class="demo-enter" id="demoEnter" type="button">Explore the synthetic demo <span aria-hidden="true">↗</span></button>
+    <small>Your edits stay in this browser and can be reset at any time.</small>
+    <a href="../index.html">← Back to portfolio</a>
+  </div>
+</main>
+<div class="app" id="coachApp" hidden>
+  <aside class="side" aria-label="Coach OS navigation">
     <div class="side-brand">
-      <span class="brand-mark">V</span>
-      <div><b>COACH OS</b><small>VIKAS YADAV · 2026–31</small></div>
+      <span class="brand-mark" aria-hidden="true">C</span>
+      <div><b>COACH OS</b><small>PUBLIC DEMO · SYNTHETIC DATA</small></div>
     </div>
     <nav class="side-nav" id="sideNav" aria-label="Coach views">
-      <button data-view="overview" class="is-active"><i>◈</i>Overview</button>
-      <button data-view="roadmap"><i>↗</i>Roadmap</button>
-      <button data-view="daily"><i>◷</i>Daily plan</button>
-      <button data-view="tasks"><i>✓</i>Tasks</button>
-      <button data-view="habits"><i>▦</i>Habits</button>
-      <button data-view="avzera"><i>▲</i>Avzera growth</button>
-      <button data-view="lab"><i>⚗</i>QA lab / API</button>
-      <button data-view="mastery"><i>≡</i>Mastery tracks</button>
-      <button data-view="review"><i>✎</i>Weekly review</button>
-      <button data-view="profile"><i>◉</i>Profile</button>
+      <div class="nav-group" role="group" aria-labelledby="navPlanLabel">
+        <span class="nav-group-label" id="navPlanLabel">Plan</span>
+        <div class="nav-group-items">
+          <button type="button" data-view="overview" class="is-active" aria-current="page"><i aria-hidden="true">◈</i>Overview</button>
+          <button type="button" data-view="roadmap"><i aria-hidden="true">↗</i>Roadmap</button>
+          <button type="button" data-view="daily"><i aria-hidden="true">◷</i>Daily plan</button>
+          <button type="button" data-view="tasks"><i aria-hidden="true">✓</i>Tasks</button>
+        </div>
+      </div>
+      <div class="nav-group" role="group" aria-labelledby="navPracticeLabel">
+        <span class="nav-group-label" id="navPracticeLabel">Practice</span>
+        <div class="nav-group-items">
+          <button type="button" data-view="habits"><i aria-hidden="true">▦</i>Habits</button>
+          <button type="button" data-view="lab"><i aria-hidden="true">⚗</i>QA process demo</button>
+          <button type="button" data-view="mastery"><i aria-hidden="true">≡</i>Mastery tracks</button>
+        </div>
+      </div>
+      <div class="nav-group" role="group" aria-labelledby="navGrowthLabel">
+        <span class="nav-group-label" id="navGrowthLabel">Growth</span>
+        <div class="nav-group-items">
+          <button type="button" data-view="pipeline"><i aria-hidden="true">▲</i>Project pipeline</button>
+          <button type="button" data-view="review"><i aria-hidden="true">✎</i>Weekly review</button>
+          <button type="button" data-view="profile"><i aria-hidden="true">◉</i>Profile</button>
+        </div>
+      </div>
     </nav>
     <div class="side-foot">
       <a href="../index.html">← Portfolio</a>
-      <button id="resetBtn" title="Reset all local data to the seeded plan">Reset data</button>
+      <span class="demo-label">Synthetic data only</span>
+      <button id="resetBtn" type="button" title="Reset the synthetic demo data">Reset demo</button>
     </div>
   </aside>
 
@@ -42,26 +70,41 @@
         <span class="eyebrow" id="topEyebrow">NORTH STAR</span>
         <h1 id="topTitle">Overview</h1>
       </div>
-      <div class="top-chips">
-        <span class="chip chip-teal" id="chipDate"></span>
-        <span class="chip chip-amber" id="chipStreak"></span>
-        <span class="chip chip-blue" id="chipBudget"></span>
+      <div class="top-actions">
+        <div class="top-chips">
+          <span class="chip chip-teal" id="chipDate"></span>
+          <span class="chip chip-amber" id="chipStreak"></span>
+          <span class="chip chip-blue" id="chipBudget"></span>
+        </div>
+        <button class="btn btn-ghost btn-sm reset-mobile" id="resetMobileBtn" type="button">Reset demo</button>
       </div>
     </header>
-    <main class="content" id="viewRoot" tabindex="-1"></main>
+    <div class="storage-status" id="storageStatus" role="status" aria-live="polite" hidden>
+      <span id="storageStatusText"></span>
+      <div class="storage-actions">
+        <button class="btn btn-ghost btn-sm" id="retryStorageBtn" type="button">Try again</button>
+        <button class="btn btn-ghost btn-sm" id="useSessionBtn" type="button" hidden>Keep session edits</button>
+        <button class="btn btn-ghost btn-sm" id="resetStorageBtn" type="button">Reset demo</button>
+      </div>
+    </div>
+    <main class="content" id="viewRoot" tabindex="-1" aria-labelledby="topTitle"></main>
   </div>
 </div>
 
-<div class="drawer-scrim" id="drawerScrim" hidden></div>
-<aside class="drawer" id="drawer" aria-label="Detail drawer" hidden>
+<dialog class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-describedby="drawerDescription">
   <div class="drawer-head">
-    <span class="eyebrow" id="drawerKind">DETAIL</span>
-    <button class="icon-btn" id="drawerClose" aria-label="Close drawer">✕</button>
+    <div>
+      <span class="eyebrow" id="drawerKind">PUBLIC DEMO EDITOR</span>
+      <h2 id="drawerTitle">Detail</h2>
+    </div>
+    <button class="icon-btn" id="drawerClose" type="button" aria-label="Close dialog">✕</button>
   </div>
+  <p class="sr-only" id="drawerDescription">Edit synthetic demo details. Press Escape or use Close dialog to return.</p>
   <div class="drawer-body" id="drawerBody"></div>
-</aside>
+</dialog>
 
 <div class="toasts" id="toasts" aria-live="polite"></div>
+<div class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <script src="coach.js"></script>
 </body>

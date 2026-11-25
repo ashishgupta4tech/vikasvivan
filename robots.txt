@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /coach/
 
 Sitemap: https://vikasyadav.is-a.dev/sitemap.xml
